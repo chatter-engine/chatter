@@ -73,6 +73,8 @@ div.callout {
   height: auto;
   width: auto;
   border: 0px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 
   font: 1em 'lucida grande', tahoma, verdana, arial, sans-serif; color: black;
   /*box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;*/

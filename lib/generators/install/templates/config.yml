@@ -13,3 +13,4 @@ redis:
 #Specify the Model to be used by Chatter, defaults to User
 chatter:
   model: User
+  key: keyofyourchoice

@@ -11,9 +11,13 @@ class InstallGenerator < Rails::Generators::NamedBase
         inject_into_file "app/views/layouts/"+f, "<%= render '/chat_footer' if session[:user_id] %>\n", before: '</body>'
       end
     end
+    Dir.entries("config/environments").select do |f|
+      if !File.directory?(f)
+        inject_into_file "config/environments/"+f, "\nconfig.middleware.delete Rack::Lock\n", after: 'ChatterApp::Application.configure do'
+      end
+    end
     append_to_file "config/application.rb", "require 'websocket-rails'\n"
     append_to_file "app/assets/javascripts/application.js", "//= require websocket_rails/main\n"
     generate "model", "ConversationMapping person1:integer person2:integer conversation_id:string"
-    rake "db:migrate"
   end
 end
