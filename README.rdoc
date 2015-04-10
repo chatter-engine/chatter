@@ -1,0 +1,15 @@
+= Chatter
+
+Follow the steps to install and use Chatter in your Rails Application:
+
+1) Add `gem 'chatter'` to your gemfile and `bundle install`
+
+2) rails generate install chatter
+   
+2) Edit chatter_config.rb to specify your redis server details, Model to be used by chatter engine & Key to be used for private-chat channel-id encryption
+
+4) Make sure to set session[:user_id] whenever a user logs in.
+
+= Note:
+
+Chatter Engine's Conversation model relies on Redis, for faster real-time data-storage & processing. Even though the dependencies are installed during the gem's installation, Redis server must be manually installed/started in the development/production environments.  
