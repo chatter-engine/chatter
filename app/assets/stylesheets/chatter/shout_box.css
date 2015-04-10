@@ -85,14 +85,6 @@ div.callout {
   float: right;
 }
 
-.callout::before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  border: 0.8em solid transparent;
-  position: absolute;
-}
-
 .callout.top-left {
   margin-left: 0;
   background: linear-gradient(#70DB70, #D6F5D6);
@@ -100,16 +92,4 @@ div.callout {
 .callout.top-right {
   margin-right: 0;
   background: linear-gradient(#66C2FF, #D6EBFF)
-}
-
-.callout.top-left::before {
-  left: 5%;
-  bottom: -50%;
-  border-top: 10px solid #99E699;
-}
-
-.callout.top-right::before {
-  right: 5%;
-  bottom: -50%;
-  border-top: 10px solid #99CCFF;
 }
